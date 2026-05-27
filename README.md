@@ -40,20 +40,6 @@ flowchart TD
 
     RawCSV --> Ingest
 ```
-
----
-
-## 👥 Project Team (Illinois Institute of Technology)
-* **Fnu Mandakini** — Data Ingestion & HDFS
-* **Aditya Mandlik** — PySpark Processing & Data Cleaning Pipeline
-* **Jainil Modi** — Spark SQL & Analysis
-* **Saadullah Mohammed** — Python Visualization
-* **Shifaa Nazeersaheb Nadaf** — Tableau & Reporting
-
----
-
-## 📁 Repository Directory Structure
-
 ```text
 netflix-big-data-pipeline/
 ├── data/

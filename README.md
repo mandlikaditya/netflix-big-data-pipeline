@@ -40,6 +40,7 @@ flowchart TD
 
     RawCSV --> Ingest
 ```
+## 📁 Repository Directory Structure
 ```text
 netflix-big-data-pipeline/
 ├── data/

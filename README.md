@@ -19,14 +19,14 @@ flowchart TD
     end
 
     subgraph Storage - EMR HDFS
-        Ingest[01_hdfs_ingestion.sh] -->|hdfs dfs -put| HDFSRaw[/user/hadoop/data/netflix_titles.csv]
+        Ingest[01_hdfs_ingestion.sh] -->|hdfs dfs -put| HDFSRaw["/user/hadoop/data/netflix_titles.csv"]
     end
 
     subgraph Processing - Apache Spark
         SparkClean[02_pyspark_cleaning.py] -->|Read Schema & Clean| HDFSRaw
         SparkClean -->|Null Imputation & Deduplication| SparkClean
         SparkClean -->|Feature Engineering & Date Parsing| SparkClean
-        SparkClean -->|coalesce 1| HDFSClean[/user/hadoop/netflix_processed/netflix_cleaned.csv]
+        SparkClean -->|coalesce 1| HDFSClean["/user/hadoop/netflix_processed/netflix_cleaned.csv"]
     end
 
     subgraph Analytical Querying
@@ -34,7 +34,7 @@ flowchart TD
     end
 
     subgraph Reporting & Visualization
-        PythonVis[04_python_visualizations.py] -->|Matplotlib / Seaborn| ReportFigs[reports/figures/*.png]
+        PythonVis[04_python_visualizations.py] -->|Matplotlib / Seaborn| ReportFigs["reports/figures/*.png"]
         Tableau[Tableau Desktop .twbx] -->|Interactive Dashboards| TableauReport[Interactive Dashboards]
     end
 
